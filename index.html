@@ -59,7 +59,8 @@ a{color:inherit}
 
 /* hero */
 .hero{background:var(--burnt);margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 150px);padding-bottom:0}
-.screen{position:relative;background:var(--smoky);border-radius:var(--r) var(--r) 0 0;padding:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.screen{position:relative;background:var(--smoky);border-radius:var(--r) var(--r) 0 0;padding:18px}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover;border-radius:16px;background:var(--smoky)}
 .frame{border-radius:16px;overflow:hidden;aspect-ratio:3/4;max-width:100%;display:grid;place-items:center;position:relative}
 .f-smoky{background:var(--smoky);box-shadow:0 0 0 1.5px var(--off) inset}
 .f-off{background:var(--off);color:var(--smoky)}
@@ -71,7 +72,8 @@ a{color:inherit}
 .sticker svg{width:76%;color:var(--smoky);fill:var(--hot);animation:spin 18s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:760px){
-  .screen{grid-template-columns:1fr;padding:12px;gap:12px}
+  .screen{padding:12px}
+  .hero-img{aspect-ratio:4/3;border-radius:12px}
   .frame{aspect-ratio:4/3;padding:18px 18px 44px}
   .sticker{width:112px;height:112px;right:8px;bottom:-48px}
 }
@@ -189,9 +191,7 @@ footer .mk{width:220px}
   <header class="hero gutter">
     <div class="inner">
       <div class="screen">
-        <div class="frame f-smoky"><svg class="mk" viewBox="0 0 530.62 500.31" style="fill:var(--burnt)" role="img" aria-label="FAIR Creativity Shop, Est. 2023"><use href="#fair-primary"/></svg><span class="cap">Assinatura principal</span></div>
-        <div class="frame f-off"><svg class="mk" viewBox="0 0 233.31 312.24" style="width:52%" role="img" aria-label="Selo FAIR"><use href="#fair-badge"/></svg><span class="cap">Selo</span></div>
-        <div class="frame f-burnt"><svg class="mk" viewBox="0 0 394.82 164.49" style="fill:var(--off);width:78%" role="img" aria-label="FAIR, Fake it 'till you make it"><use href="#fair-boxed"/></svg><span class="cap">Fake it 'till you make it</span></div>
+        <img class="hero-img" src="assets/anti-skeletons.jpg" width="1672" height="941" fetchpriority="high" alt="Campanha Seja ANTI: quatro esqueletos vestidos como criativo, produtor, influencer e creator, com crachás, em um cenário escuro com faixas verde-limão">
         <div class="sticker" aria-hidden="true"><svg viewBox="0 0 281.03 249.91"><use href="#fair-circle"/></svg></div>
       </div>
     </div>
