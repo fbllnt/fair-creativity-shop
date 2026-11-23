@@ -60,7 +60,7 @@ a{color:inherit}
 
 /* hero */
 .hero{position:relative;background:var(--smoky);margin-top:calc(-1 * env(safe-area-inset-top,0px))}
-.hero-img{display:block;width:100%;height:auto;aspect-ratio:1672/941;max-height:100svh;min-height:420px;object-fit:cover;object-position:50% 40%;background:var(--smoky)}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover;object-position:50% 0;background:var(--smoky)}
 .frame{border-radius:16px;overflow:hidden;aspect-ratio:3/4;max-width:100%;display:grid;place-items:center;position:relative}
 .f-smoky{background:var(--smoky);box-shadow:0 0 0 1.5px var(--off) inset}
 .f-off{background:var(--off);color:var(--smoky)}
@@ -72,7 +72,7 @@ a{color:inherit}
 .sticker svg{width:76%;color:var(--smoky);fill:var(--hot);animation:spin 18s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:760px){
-  .hero-img{aspect-ratio:4/5;min-height:0}
+  .hero-img{aspect-ratio:4/5}
   .frame{aspect-ratio:4/3;padding:18px 18px 44px}
   .sticker{width:112px;height:112px;right:8px;bottom:-48px}
 }
