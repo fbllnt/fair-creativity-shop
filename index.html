@@ -33,13 +33,14 @@ a{color:inherit}
 .label{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.12em;text-transform:uppercase}
 
 /* fixed chrome */
-.corner{position:fixed;z-index:30;top:calc(14px + env(safe-area-inset-top,0px));left:calc(18px + env(safe-area-inset-left,0px));width:92px;display:block;text-decoration:none;border-radius:50%}
+.corner{position:fixed;z-index:30;top:calc(32px + env(safe-area-inset-top,0px));left:calc(36px + env(safe-area-inset-left,0px));width:76px;display:block;text-decoration:none;border-radius:50%}
 .corner:focus-visible{outline:2px solid var(--off);outline-offset:4px}
 .corner svg{display:block;width:100%;height:auto;color:var(--off);fill:var(--hot);transition:color .25s,fill .25s}
 .corner.t-light svg{color:var(--smoky);fill:var(--hot)}
 .corner.t-burnt svg{color:var(--off);fill:var(--off)}
-@media (max-width:760px){.corner{width:72px}}
-.pill.talk{position:fixed;z-index:30;top:calc(22px + env(safe-area-inset-top,0px));right:calc(18px + env(safe-area-inset-right,0px))}
+@media (max-width:760px){.corner{width:60px;top:calc(22px + env(safe-area-inset-top,0px));left:calc(22px + env(safe-area-inset-left,0px))}}
+.pill.talk{position:fixed;z-index:30;top:calc(36px + env(safe-area-inset-top,0px));right:calc(36px + env(safe-area-inset-right,0px))}
+@media (max-width:760px){.pill.talk{top:calc(26px + env(safe-area-inset-top,0px));right:calc(22px + env(safe-area-inset-right,0px))}}
 .pill.menu-btn{position:fixed;z-index:30;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:calc(18px + env(safe-area-inset-left,0px))}
 .pill{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.06em;text-transform:uppercase;overflow:hidden;position:relative}
 .pill:focus-visible{outline:2px solid var(--off);outline-offset:3px}
@@ -58,9 +59,8 @@ a{color:inherit}
 .overlay .pill.close{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:calc(18px + env(safe-area-inset-left,0px))}
 
 /* hero */
-.hero{background:var(--burnt);margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 150px);padding-bottom:0}
-.screen{position:relative;background:var(--smoky);border-radius:var(--r) var(--r) 0 0;padding:18px}
-.hero-img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover;border-radius:16px;background:var(--smoky)}
+.hero{position:relative;background:var(--smoky);margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:1672/941;max-height:100svh;min-height:420px;object-fit:cover;object-position:50% 40%;background:var(--smoky)}
 .frame{border-radius:16px;overflow:hidden;aspect-ratio:3/4;max-width:100%;display:grid;place-items:center;position:relative}
 .f-smoky{background:var(--smoky);box-shadow:0 0 0 1.5px var(--off) inset}
 .f-off{background:var(--off);color:var(--smoky)}
@@ -68,12 +68,11 @@ a{color:inherit}
 .frame .cap{position:absolute;left:16px;bottom:14px;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
 .frame svg.mk{width:62%;max-height:68%}
 .f-off svg.mk{color:var(--smoky)}
-.sticker{position:absolute;right:-14px;bottom:-62px;width:150px;height:150px;border-radius:50%;background:var(--off);display:grid;place-items:center;z-index:2;box-shadow:0 0 0 3px var(--smoky)}
+.sticker{position:absolute;right:max(32px,env(safe-area-inset-right,0px));bottom:-62px;width:150px;height:150px;border-radius:50%;background:var(--off);display:grid;place-items:center;z-index:2;box-shadow:0 0 0 3px var(--smoky)}
 .sticker svg{width:76%;color:var(--smoky);fill:var(--hot);animation:spin 18s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:760px){
-  .screen{padding:12px}
-  .hero-img{aspect-ratio:4/3;border-radius:12px}
+  .hero-img{aspect-ratio:4/5;min-height:0}
   .frame{aspect-ratio:4/3;padding:18px 18px 44px}
   .sticker{width:112px;height:112px;right:8px;bottom:-48px}
 }
@@ -188,13 +187,9 @@ footer .mk{width:220px}
 </div>
 
 <main id="top">
-  <header class="hero gutter">
-    <div class="inner">
-      <div class="screen">
+  <header class="hero">
         <img class="hero-img" src="assets/anti-skeletons.jpg" width="1672" height="941" fetchpriority="high" alt="Campanha Seja ANTI: quatro esqueletos vestidos como criativo, produtor, influencer e creator, com crachás, em um cenário escuro com faixas verde-limão">
         <div class="sticker" aria-hidden="true"><svg viewBox="0 0 281.03 249.91"><use href="#fair-circle"/></svg></div>
-      </div>
-    </div>
   </header>
 
   <section class="intro gutter" id="studio" aria-labelledby="h-intro">
